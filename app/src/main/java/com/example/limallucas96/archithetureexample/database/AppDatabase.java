@@ -12,7 +12,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = Note.class, version = 1)
+@Database(entities = {Note.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     //This class must be a singleton class, so we can access database from anywhere in our code

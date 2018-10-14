@@ -18,9 +18,6 @@ public class Note {
         this.priority = priority;
     }
 
-    public Note(Integer id) {
-        this.id = id;
-    }
 
     public Integer getId() {
         return id;
