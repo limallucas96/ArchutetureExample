@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<Note> notes) {
                 mNotes = notes;
-                mAdapter.setNotes(mNotes);
+                mAdapter.submitList(mNotes);
             }
         });
         setRecycleViewTouchHelper();
