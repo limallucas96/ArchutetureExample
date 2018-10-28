@@ -1,10 +1,11 @@
-package com.example.limallucas96.archithetureexample;
+package com.example.limallucas96.archithetureexample.view.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.limallucas96.archithetureexample.R;
 import com.example.limallucas96.archithetureexample.entity.Note;
 
 import java.util.ArrayList;

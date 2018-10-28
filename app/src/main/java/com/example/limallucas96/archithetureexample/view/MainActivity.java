@@ -1,8 +1,9 @@
-package com.example.limallucas96.archithetureexample;
+package com.example.limallucas96.archithetureexample.view;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
+import com.example.limallucas96.archithetureexample.view.adapter.NoteRecyclerViewAdapter;
+import com.example.limallucas96.archithetureexample.R;
 import com.example.limallucas96.archithetureexample.entity.Note;
 import com.example.limallucas96.archithetureexample.viewmodel.NoteViewModel;
 
@@ -11,7 +12,6 @@ import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
