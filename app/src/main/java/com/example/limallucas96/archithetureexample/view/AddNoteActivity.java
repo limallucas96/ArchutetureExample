@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class AddNoteActivity extends AppCompatActivity {
+    public static final String EXTRA_ID = "com.example.limallucas96.archithetureexample.EXTRA_ID";
     public static final String EXTRA_TITLE = "com.example.limallucas96.archithetureexample.EXTRA_TITLE";
     public static final String EXTRA_DESCRPTION = "com.example.limallucas96.archithetureexample.EXTRA_DESCRPTION";
     public static final String EXTRA_PRIORITY = "com.example.limallucas96.archithetureexample.EXTRA_PRIORITY";
@@ -36,7 +37,15 @@ public class AddNoteActivity extends AppCompatActivity {
         mPicker.setMaxValue(10);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
-        setTitle("Add Note");
+
+        if (getIntent().hasExtra(EXTRA_ID)) {
+            setTitle("Edit Note");
+            mTitle.setText(getIntent().getStringExtra(EXTRA_TITLE));
+            mDescription.setText(getIntent().getStringExtra(EXTRA_DESCRPTION));
+            mPicker.setValue(getIntent().getIntExtra(EXTRA_PRIORITY, 1));
+        } else {
+            setTitle("Add Note");
+        }
     }
 
     @Override
@@ -71,6 +80,14 @@ public class AddNoteActivity extends AppCompatActivity {
         data.putExtra(EXTRA_TITLE, title);
         data.putExtra(EXTRA_DESCRPTION, description);
         data.putExtra(EXTRA_PRIORITY, pririoty);
+
+        if (getIntent().hasExtra(EXTRA_ID)) {
+            int id = getIntent().getIntExtra(EXTRA_ID, -1);
+            if (id != -1) {
+                data.putExtra(EXTRA_ID, id);
+            }
+        }
+
         setResult(RESULT_OK, data); //indicates if the input was success or not
         finish();
     }
